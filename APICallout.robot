@@ -106,11 +106,18 @@ Run Another CRT Test and Get The RunID
     ${RunID}=                   Set Variable                ${RunData}[id]
 
     #Now we want to make another Callout to get the run results
-    #We will wait longer enough for our test to run and then get the run results
-    ${url}=                     Format String               /v4/projects/{}/jobs/{}/builds/{}                          ${ProjectID}                ${SuiteID}    ${RunId}
-    Sleep                       120s
-    ${resp}=                    GET On Session              CRTAPI                      ${url}
-    Log To Console              ${resp.text}
-
-
-
+    #We will wait just long enough for our test to run and then get the run results
+    ${url}=                     Format String               /v4/projects/{}/jobs/{}/builds/{}                       ${ProjectID}                ${SuiteID}    ${RunId}
+    WHILE                       True                        limit=480 seconds
+        ${resp}=                GET On Session              CRTAPI                      ${url}
+        Log To Console          ${resp.text}
+        ${status_Bool}=         Run Keyword And Return Status                           Should Contain              ${resp.text}                "status":"executing"
+        Log To Console          ${status_Bool}
+        
+        IF                      "${status_Bool}" == "False"
+            BREAK
+        END
+        
+        Sleep                   10s
+    END
+    Should Contain              ${resp.text}                "status":"pass"

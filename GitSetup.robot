@@ -9,7 +9,7 @@ Entering A Lead
     [tags]                    Lead                        Git Repo Exercise
     Appstate                  Home
     LaunchApp                 Sales
-
+    ClickText                 Leads
     ClickText                 Leads
     VerifyText                Recently Viewed             timeout=120s
     ClickText                 New                        anchor=Import

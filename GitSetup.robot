@@ -11,6 +11,8 @@ Entering A Lead
     LaunchApp                 Sales
     ClickText                 Leads
     ClickText                 Leads
+     ClickText                 Leads
+    ClickText                 Leads
     VerifyText                Recently Viewed             timeout=120s
     ClickText                 New                        anchor=Import
     VerifyText                Lead Information

@@ -8,6 +8,7 @@ Suite Teardown                End suite
 Entering A Lead
     [tags]                    Lead                        Git Repo Exercise
     # this is to test from crt
+    # this line is tyoed in github
     Appstate                  Home
     LaunchApp                 Sales
     ClickText                 Leads

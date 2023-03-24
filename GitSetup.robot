@@ -7,6 +7,7 @@ Suite Teardown                End suite
 *** Test Cases ***
 Entering A Lead
     [tags]                    Lead                        Git Repo Exercise
+    # this is to test from crt
     Appstate                  Home
     LaunchApp                 Sales
     ClickText                 Leads

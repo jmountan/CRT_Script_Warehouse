@@ -29,7 +29,8 @@ Shop for products
     VerifyText          Slim Fit, 5oz 100% Cotton T-Shirt.
     GoTo                https://qentinelqi.github.io/shop/
     ClickText           Bumble the Elephant
-    ClickText           Add to cart
+    #ClickText           Add to cart
+    ClickText           Add to carts
     VerifyText          Cart summary
     VerifyText          Sacha the Deer
     ClickText           Continue shopping
